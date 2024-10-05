@@ -1,0 +1,385 @@
+/* Estilos base */
+* {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimento padrão */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura */
+}
+
+body {
+    color: #000; /* Cor do texto padrão */
+    background-color: white; /* Cor de fundo da página */
+    max-width: 100%; /* Impede que o corpo exceda a largura da tela */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding-top: 50px; /* Espaçamento superior para o cabeçalho fixo */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+}    
+
+a {
+    font-family: "Poppins", system-ui; /* Fonte para links */
+    font-weight: 420; /* Peso da fonte para links */
+    font-style: normal; /* Estilo da fonte */
+}
+
+p {
+    font-family: "Poppins", system-ui; /* Fonte para parágrafos */
+    font-weight: 350; /* Peso da fonte para parágrafos */
+    font-style: normal; /* Estilo da fonte */
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Header */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo da página */
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */
+    right: 0; /* Posiciona à direita */
+    z-index: 1000; /* Eleva a camada do cabeçalho */
+    background-color: white; /* Cor de fundo do cabeçalho */
+    height: 50px; /* Altura do cabeçalho */
+}
+
+.header-container { /* Container do header */
+    display: flex; /* Usando Flexbox para layout */
+    justify-content: space-between; /* Espaçamento uniforme entre itens */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    
+    height: 50px; /* Altura do container */
+    padding: 0 80px; /* Margens laterais iguais */
+}
+
+nav ul { /* Menu de navegação do header */
+    display: flex; /* Usando Flexbox para layout horizontal */
+    list-style: none; /* Remove marcas de lista */
+}
+
+nav ul li {
+    margin: 0 0px; /* Margem entre itens do menu */
+}
+
+nav ul li a {
+    display: flex; /* Usando Flexbox para layout */
+    align-items: center; /* Alinha ícones e texto verticalmente */
+    color: black; /* Cor do texto do link */
+    text-decoration: none; /* Remove sublinhado */
+    transition: color 0.3s; /* Transição suave para mudança de cor */
+    animation: colorChange 5s infinite alternate; /* Animação de troca de cor */
+}
+
+.icon-logo {
+    max-width: 30px; /* Tamanho da logo */
+    user-select: none; /* Impede seleção do ícone */
+    pointer-events: none; /* Ignora eventos do mouse no ícone */
+}
+
+/* Media query para smartphones (telas menores que 600px) */
+@media (max-width: 900px) {
+    .header-container {
+        padding: 0 20px; /* Remove as margens laterais grandes */
+    }
+
+    nav ul {
+        justify-content: space-between; /* Distribui os itens igualmente no header */
+        width: 100%; /* Garante que a lista ocupe toda a largura do container */
+    }
+
+    nav ul li {
+        margin: 0; /* Remove a margem entre os itens */
+    }
+
+    nav ul li a {
+        justify-content: center; /* Centraliza os itens dentro de cada link */
+    }
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Apresentação */
+.apresentacao {
+    text-align: left; /* Alinhamento à esquerda do texto */
+    padding-top: 170px; /* Espaçamento superior */
+    padding-bottom: 100px; /* Espaçamento inferior */
+    background-color: white; /* Cor de fundo da seção de apresentação */
+}
+
+.apresentacao-container {
+    display: flex; /* Usando Flexbox para layout */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    max-width: 780px; /* Limita a largura da apresentação */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 20px 120px; /* Padding lateral e inferior*/
+}
+
+.titulo-apresentacao {
+    font-size: 40px; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.apresentacao p {
+    font-size: 16px; /* Tamanho do texto do parágrafo */
+    color: #414145; /* Cor do texto */
+}
+
+.contato{
+    color: black;
+    text-decoration: none;
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Galeria de Planilhas */
+.grade {
+    padding: 20px 10px; /* Padding na galeria */
+    display: flex; /* Usando Flexbox para layout */
+    justify-content: center; /* Centraliza a galeria na página */
+    background-color: #ffffff; /* Cor de fundo da galeria */
+}
+
+.grade-container {
+    display: grid; /* Usando Grid para layout */
+    grid-template-columns: repeat(2, 1fr); /* Define uma coluna de igual largura */
+    gap: 5px; /* Espaçamento entre as imagens */
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Limite máximo para centralizar */
+    justify-items: center; /* Centraliza as imagens nas colunas */
+}
+
+.grade-container img {
+    width: 100%; /* As imagens ocupam toda a largura da coluna */
+    max-width: 767px; /* Limita o tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 0; /* Sem arredondamento nos cantos das imagens */
+}
+
+/* Media query para dispositivos móveis (telas menores que 600px) */
+@media (max-width: 950px) {
+    .grade-container {
+        grid-template-columns: 1fr; /* Altera para uma coluna em telas pequenas */
+    }
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Depoimentos */
+.depoimentos {
+    max-width: 100%; /* Permitir que a seção ocupe a largura completa */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+    padding-top: 100px;
+    padding-bottom: 40px;
+
+    display: flex;
+    justify-content: flex-start; /* Alinha os depoimentos à esquerda */
+    gap: 20px; /* Espaçamento entre os depoimentos */
+    overflow-x: auto; /* Ativa a rolagem horizontal */
+    max-width: 767px;
+    overflow-x: auto; /* Mantém a rolagem horizontal */
+}
+
+@media (max-width: 800px) {
+    .depoimentos {
+        margin: 0 12px; /* Ajusta a margem lateral em telas menores */
+    }
+}
+
+/* Estilo para a barra de rolagem */
+.depoimentos::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem */
+}
+
+.depoimentos::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Cor do "dedo" da barra de rolagem */
+    border-radius: 4px; /* Arredonda os cantos */
+}
+
+.depoimentos::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Cor de fundo da barra de rolagem */
+}
+
+.depoimentos-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.depoimento-perfil {
+    display: flex;
+    flex-direction: column; /* Coloca o conteúdo em uma coluna */
+    align-items: flex-start; /* Alinha itens à esquerda */
+    background-color: #f2f5f7; /* Cor de fundo do quadrado */
+    border-radius: 6px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    width: 361px; /* Largura fixa */
+    height: 230px; /* Altura fixa */
+    text-align: left; /* Texto alinhado à esquerda */
+}
+
+.perfil {
+    display: flex; /* Usar flexbox para organizar a foto e as informações */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    margin: 16px 0px 16px 6px;
+}
+
+.depoimento-foto {
+    margin-right: 14px; /* Espaçamento à direita da imagem */
+
+    user-select: none; /* Impede seleção do ícone */
+    pointer-events: none; /* Ignora eventos do mouse no ícone */
+
+    margin-bottom: 6px;
+}
+
+.depoimento-foto img {
+    max-width: 38px; /* Tamanho da imagem */
+    opacity: 0.14;
+}
+
+.depoimento-info {
+    display: flex; /* Usar flexbox para organizar nome e área de atuação */
+    flex-direction: column; /* Coloca o nome e a área de atuação em uma coluna */
+}
+
+.depoimento-nome {
+    font-family: "Poppins", system-ui; /* Fonte para links */
+    font-weight: 400; /* Peso da fonte para links */
+    font-style: normal; /* Estilo da fonte */
+    font-size: 13px;
+}
+
+.depoimento-area {
+    font-family: "Poppins", system-ui; /* Fonte para links */
+    font-weight: 340; /* Peso da fonte para links */
+    font-style: normal; /* Estilo da fonte */
+
+    font-size: 13px; /* Tamanho menor para a área de atuação */
+    color: black; /* Cor mais clara para o texto da área de atuação */
+}
+
+.depoimento-texto {
+    font-family: "Poppins", system-ui; /* Fonte para links */
+    font-weight: 300; /* Peso da fonte para links */
+    font-style: normal; /* Estilo da fonte */
+    font-size: 14px;
+    line-height: 1.3; /* Altura da linha para legibilidade */
+
+    padding: 0 5px 0 5px;
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Seção de Dúvidas */
+.duvidas {
+    max-width: 807px; /* Largura máxima da seção de dúvidas */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 120px 0px 20px; /* Padding superior, lateral e inferior */
+}
+
+.duvidas-container {
+    padding: 20px; /* Padding na seção de dúvidas */
+    display: flex; /* Usando Flexbox para layout */
+    flex-direction: column; /* Empilha os itens verticalmente */
+}
+
+@media (max-width: 800px) {
+    .duvidas-container {
+        padding: 13px; /* Ajusta a margem lateral em telas menores */
+    }
+}
+
+.duvida {
+    margin-bottom: 40px; /* Espaçamento entre as dúvidas */
+}
+
+.titulo-duvida {
+    font-size: 24px; /* Tamanho do título da dúvida */
+    text-decoration: none; /* Remove sublinhado */
+    color: black; /* Cor do texto do título */
+}
+
+.duvida p {
+    font-size: 15px; /* Tamanho do texto da resposta */
+    color: #2d2d2d; /* Cor do texto */
+    text-align: justify; /* Justifica o texto */
+}
+
+/* Planilhas Gratuitas */
+.planilhas {
+    display: flex; /* Usando Flexbox para layout */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    justify-content: center; /* Centraliza verticalmente */
+    max-width: 800px; /* Largura máxima da seção de planilhas */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 0px; /* Padding lateral */
+}
+
+.lista-planilhas {
+    list-style: none; /* Remove marcas de lista */
+    padding: 0; /* Remove padding */
+    width: 100%; /* Ocupa todo o espaço disponível */
+}
+
+.lista-planilhas li {
+    display: flex; /* Usando Flexbox para layout */
+    align-items: center; /* Alinha ícones e texto verticalmente */
+    margin-bottom: 2px; /* Espaçamento inferior entre os itens */
+    font-family: 'Poppins', sans-serif; /* Fonte dos itens da lista */
+    padding: 4px; /* Espaçamento interno para as bordas */
+    border-radius: 0px; /* Arredondar os cantos */
+}
+
+.lista-planilhas li img {
+    width: 20px; /* Largura do ícone da planilha */
+    height: auto; /* Mantém a proporção do ícone */
+    margin-right: 8px; /* Espaçamento à direita do ícone */
+    user-select: none; /* Impede seleção do ícone */
+    pointer-events: none; /* Ignora eventos do mouse no ícone */
+}
+
+.lista-planilhas li a {
+    font-family: "Poppins", system-ui; /* Fonte dos links da lista */
+    font-weight: 350; /* Peso da fonte dos links */
+    font-style: normal; /* Estilo da fonte dos links */
+    font-size: 15px; /* Tamanho da fonte dos links */
+    color: #000; /* Cor do texto dos links */
+}
+
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+
+/* Rodapé */
+footer {
+    font-size: 0.8rem; /* Tamanho da fonte do rodapé */
+    color: black; /* Cor do texto do rodapé */
+    padding: 10px; /* Padding do rodapé */
+
+    user-select: none; /* Impede seleção do ícone */
+    pointer-events: none; /* Ignora eventos do mouse no ícone */
+}
+
+/* Container do Rodapé */
+.footer-container {
+    display: flex; /* Usando Flexbox para layout */
+    flex-direction: column; /* Faz os itens ficarem um embaixo do outro */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    max-width: 100%; /* Limite máximo da largura do rodapé */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
